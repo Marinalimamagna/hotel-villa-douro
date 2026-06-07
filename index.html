@@ -3,39 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villa d'Ouro - Mini Hotel Boutique</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BOUGANVILLE SUÍTES</title>
+    <link rel="icon" type="image/jpeg" href="LOGOREDONO.jpeg">
+    <link rel="stylesheet" href="style.css?v=2026">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
-    <a href="https://wa.me/5500999999999?text=Ol%C3%A1!%20Gostaria de saber mais sobre a disponibilidade de reservas." class="whatsapp-flutuante" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/553196389641?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20disponibilidade%20de%20reservas." class="whatsapp-flutuante" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
         <span class="tooltip-whatsapp">Fale Conosco</span>
     </a>
 
-    <header>
+    <header class="main-header">
         <div class="container header-container">
-            <div class="logo">
-                <span class="logo-icon">⚜️</span>
-                <div class="logo-texto">
-                    <h1>Villa d'Ouro</h1>
-                    <p>MINI HOTEL BOUTIQUE</p>
-                </div>
-            </div>
-            <nav>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-esquerdo" id="navMenu">
                 <ul>
                     <li><a href="#sobre">O Hotel</a></li>
                     <li><a href="#quartos">Acomodações</a></li>
-                    <li><a href="#reservas">Reservas</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li class="mobile-only"><a href="#reservas">Reservas</a></li>
+                    <li class="mobile-only"><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
-            <div class="redes-topo">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+
+            <div class="logo-central">
+                <div class="logo-background-wrapper">
+                    <img src="LOGOREDONO-.png" alt="Logo Bouganville Suítes" class="logo-img-centro">
+                </div>
+                <div class="logo-texto-centro">
+                    <h1>BOUGANVILLE SUÍTES</h1>
+                    <span class="logo-subtitulo">HOSPEDAGEM EXCLUSIVA</span>
+                </div>
             </div>
+
+            <div class="header-direita-bloco">
+                <nav class="nav-direito">
+                    <ul>
+                        <li><a href="#reservas">Reservas</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+
+                <div class="redes-topo">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
         </div>
     </header>
 
@@ -50,97 +70,71 @@
     <section id="sobre" class="container sobre-section">
         <div class="sobre-conteudo">
             <h2>Conceito de Exclusividade</h2>
-            <p>O <strong>Villa d'Ouro</strong> é um mini hotel projetado para quem busca fugir da rotina sem abrir mão do luxo e do atendimento personalizado. Com uma estrutura charmosa de apenas 6 acomodações, garantimos total privacidade, silêncio e uma imersão completa na natureza e no conforto.</p>
+            <p>Se você busca conforto, praticidade e aconchego, o <strong>Bouganville Suítes</strong> é o lugar ideal. Com excelente localização — a apenas 700 metros do centro da cidade — oferecemos suítes completas que fazem você se sentir em casa.</p>
+            <p>Contamos com 6 quartos novos e bem estruturados, perfeitos para casais e também para empresas.</p>
         </div>
     </section>
 
     <section id="quartos" class="quartos-section">
         <div class="container">
-            <h2 class="titulo-secao">Nossas 6 Acomodações Exclusivas</h2>
-            <p class="subtitulo-secao">Escolha o ambiente perfeito para a sua estadia</p>
+            <h2 class="titulo-secao">Nossas Acomodações</h2>
+            <p class="subtitulo-secao">
+                Todas as suítes possuem: Cama de casal, Banheiro privativo, TV, Frigobar, Ar-condicionado, 
+                Cozinha equipada com micro-ondas, utensílios, bancada para refeições e armários. 
+                Tudo pensado para tornar sua estadia ainda mais confortável!
+            </p>
             
             <div class="quartos-grid">
                 <div class="quarto-card" data-quarto-id="1">
-                    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&auto=format&fit=crop&q=60" alt="Suíte Master Ouro">
+                    <img src="quarto (1).jpeg" alt="Suíte Conforto">
                     <div class="quarto-info">
-                        <h3>01. Suíte Master Ouro</h3>
-                        <p>Varanda privativa com hidromassagem, cama King Size e vista panorâmica para o vale.</p>
-                        <span class="preco">A partir de R$ 850 / noite</span>
+                        <h3>01. Suíte Conforto</h3>
+                        <p>Acomodação clean com cama box de casal, enxoval completo, cortinas blackout e ventilador de teto moderno.</p>
                     </div>
                 </div>
 
                 <div class="quarto-card" data-quarto-id="2">
-                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&auto=format&fit=crop&q=60" alt="Suíte Premium Prata">
+                    <img src="quarto (2).jpeg" alt="Suíte Master Executiva">
                     <div class="quarto-info">
-                        <h3>02. Suíte Premium Prata</h3>
-                        <p>Cama Queen Size, lareira ecológica aconchegante e enxoval de fios egípcios.</p>
-                        <span class="preco">A partir de R$ 750 / noite</span>
+                        <h3>02. Suíte Master Executiva</h3>
+                        <p>Espaço integrado com mesa de escritório, cadeira de couro premium, cozinha equipada ao fundo e bancada americana.</p>
                     </div>
                 </div>
 
                 <div class="quarto-card" data-quarto-id="3">
-                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600&auto=format&fit=crop&q=60" alt="Chalé Rustico Bronze">
+                    <img src="quarto (3).jpeg" alt="Suíte Studio Integrada">
                     <div class="quarto-info">
-                        <h3>03. Chalé Rústico Bronze</h3>
-                        <p>Design integrado à natureza, deck de madeira privativo e adega de vinhos.</p>
-                        <span class="preco">A partir de R$ 680 / noite</span>
+                        <h3>03. Suíte Studio Integrada</h3>
+                        <p>Visão ampla mostrando a área de trabalho ao lado da cama com acesso direto à rua e cozinha funcional completa.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="quarto-card" data-quarto-id="4">
-                    <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?w=600&auto=format&fit=crop&q=60" alt="Suíte Design Imperial">
-                    <div class="quarto-info">
-                        <h3>04. Suíte Design Imperial</h3>
-                        <p>Decoração minimalista moderna, teto de vidro para ver as estrelas e chuveiro duplo.</p>
-                        <span class="preco">A partir de R$ 900 / noite</span>
-                    </div>
-                </div>
-
-                <div class="quarto-card" data-quarto-id="5">
-                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=600&auto=format&fit=crop&q=60" alt="Suíte Vista da Mata">
-                    <div class="quarto-info">
-                        <h3>05. Suíte Vista da Mata</h3>
-                        <p>Totalmente rodeado pela floresta local, perfeito para relaxamento e leitura.</p>
-                        <span class="preco">A partir de R$ 620 / noite</span>
-                    </div>
-                </div>
-
-                <div class="quarto-card" data-quarto-id="6">
-                    <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=600&auto=format&fit=crop&q=60" alt="Suíte Família Nobre">
-                    <div class="quarto-info">
-                        <h3>06. Suíte Família Nobre</h3>
-                        <p>Espaço amplo com dois ambientes integrados, ideal para até 4 pessoas.</p>
-                        <span class="preco">A partir de R$ 950 / noite</span>
-                    </div>
-                </div>
+            <div class="comodidades-container">
+                <h3>Comodidades e serviços incluídos:</h3>
+                <ul class="comodidades-lista">
+                    <li><i class="fas fa-wifi"></i> <div><strong>Wi-Fi de alta velocidade</strong><span>em todos os quartos</span></div></li>
+                    <li><i class="fas fa-bed"></i> <div><strong>Roupa de cama</strong><span>inclusa no quarto</span></div></li>
+                    <li><i class="fas fa-parking"></i> <div><strong>Estacionamento gratuito</strong><span>no próprio local</span></div></li>
+                    <li><i class="fas fa-clock"></i> <div><strong>Atendimento</strong><span>das 08h às 22h</span></div></li>
+                    <li><i class="fas fa-file-alt"></i> <div><strong>Contratos flexíveis</strong><span>e faturamento corporativo</span></div></li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="reservas" class="reservas-section">
-        <div class="container">
-            <h2 class="titulo-secao">Reserve Sua Estadia</h2>
-            <p class="subtitulo-secao">Consulte a disponibilidade em tempo real das nossas acomodações</p>
-            
-            <div id="motor-reserva-container" class="motor-placeholder">
-                <p>⚙️ <strong>Espaço do Motor de Reservas</strong></p>
-                <p class="small">O calendário inteligente conectado ao Supabase e ao Channel Manager será carregado aqui.</p>
-                <button class="btn-secundario" id="btn-simular-motor">Simular Carregamento</button>
-            </div>
-        </div>
-    </section>
+   
 
     <footer id="contato">
         <div class="container footer-grid">
             <div class="footer-coluna-logo">
                 <div class="logo-footer">
-                    <span class="logo-icon">⚜️</span>
+                    <img src="LOGOREDONO-.png" alt="Logo Bouganville Suítes" class="logo-img-footer">
                     <div class="logo-texto-footer">
-                        <h3>Villa d'Ouro</h3>
-                        <p>MINI HOTEL BOUTIQUE</p>
+                        <h3>Bouganville Suítes</h3>
                     </div>
                 </div>
-                <p class="footer-descricao">Um novo conceito em hospedagem de charme. Apenas 6 acomodações exclusivas desenhadas para o seu total bem-estar e privacidade.</p>
+                <p class="footer-descricao">Bouganville Suítes — Sua casa em Conceição do Mato Dentro. Um novo conceito em hospedagem urbana que une privacidade absoluta e conforto.</p>
                 <div class="redes-sociais-footer">
                     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -151,26 +145,25 @@
                 <h4>Navegação</h4>
                 <ul class="footer-links">
                     <li><a href="#sobre"><i class="fas fa-chevron-right"></i> O Hotel</a></li>
-                    <li><a href="#quartos"><i class="fas fa-chevron-right"></i> Nossas Suítes</a></li>
+                    <li><a href="#quartos"><i class="fas fa-chevron-right"></i> Acomodações</a></li>
                     <li><a href="#reservas"><i class="fas fa-chevron-right"></i> Reservas Online</a></li>
-                    <li><a href="https://booking.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Perfil na Booking</a></li>
                 </ul>
             </div>
 
             <div class="footer-coluna">
                 <h4>Contato & Localização</h4>
                 <ul class="footer-contato-info">
-                    <li><i class="fas fa-map-marker-alt"></i> Av. das Hortênsias, 1200 - Bairro Jardim, Cidade Destino/UF</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Rua Quatro, nº 654 - Jardim Bouganville, Conceição do Mato Dentro/MG</li>
                     <li><i class="fas fa-phone-alt"></i> (00) 3344-5566</li>
-                    <li><i class="fab fa-whatsapp"></i> (00) 99999-9999</li>
-                    <li><i class="fas fa-envelope"></i> reservas@villadourominihotel.com.br</li>
+                    <li><i class="fab fa-whatsapp"></i> (31) 9638-9641</li>
+                    <li><i class="fas fa-envelope"></i> reservas@bouganvillesuites.com.br</li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-inferior">
             <div class="container footer-inferior-flex">
-                <p>&copy; 2026 Villa d'Ouro Mini Hotel Boutique. Todos os direitos reservados.</p>
+                <p>&copy; 2026 Bouganville Suítes. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>

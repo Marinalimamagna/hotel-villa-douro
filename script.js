@@ -1,6 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("🌟 Site Villa d'Ouro carregado e pronto para integração!");
+    console.log("🌟 Site Bouganville Suítes carregado e pronto!");
 
+    // ==========================================
+    // CONTROLE INTEGRADO DO MENU HAMBÚRGUER MOBILE
+    // ==========================================
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (menuToggle && navMenu) {
+        // Abre ou fecha ao clicar nas barrinhas
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+            
+            // Alterna o desenho entre barras (三) e fechar (X)
+            const icone = menuToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icone.className = 'fas fa-times';
+            } else {
+                icone.className = 'fas fa-bars';
+            }
+        });
+
+        // Fecha a gaveta lateral quando o usuário clica em qualquer link
+        const linksDoMenu = navMenu.querySelectorAll('ul li a');
+        linksDoMenu.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.querySelector('i').className = 'fas fa-bars';
+            });
+        });
+
+        // Fecha o menu caso o usuário clique fora dele
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+                menuToggle.querySelector('i').className = 'fas fa-bars';
+            }
+        });
+    }
+
+    // ==========================================
+    // ROLAGEM AO CLICAR NOS QUARTOS
+    // ==========================================
     const cardsDosQuartos = document.querySelectorAll('.quarto-card');
     const botaoSimular = document.getElementById('btn-simular-motor');
     const containerMotor = document.getElementById('motor-reserva-container');
@@ -15,6 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ==========================================
+    // SIMULADOR DO MOTOR
+    // ==========================================
     if (botaoSimular) {
         botaoSimular.addEventListener('click', () => {
             containerMotor.style.backgroundColor = '#f4fbf7';

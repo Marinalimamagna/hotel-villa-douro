@@ -1,11 +1,16 @@
-/* RESET DE PADRÕES */
+/* ==========================================================================
+   1. RESET DE PADRÕES E CONFIGURAÇÕES GERAIS (ANTI-ESTOURO MOBILE)
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden; 
     font-family: 'Montserrat', sans-serif;
     color: #333;
     line-height: 1.6;
@@ -19,7 +24,9 @@ body {
     margin: 0 auto;
 }
 
-/* BOTÃO FLUTUANTE DO WHATSAPP */
+/* ==========================================================================
+   2. BOTÃO FLUTUANTE DO WHATSAPP
+   ========================================================================== */
 .whatsapp-flutuante {
     position: fixed;
     bottom: 30px;
@@ -47,7 +54,7 @@ body {
 .tooltip-whatsapp {
     position: absolute;
     right: 75px;
-    background-color: #333;
+    background-color: #164a32;
     color: #fff;
     font-size: 0.8rem;
     padding: 5px 12px;
@@ -65,141 +72,230 @@ body {
     visibility: visible;
 }
 
-/* CABEÇALHO, MENU E REDES DO TOPO */
-header {
+/* ==========================================================================
+   3. CABEÇALHO (DESKTOP)
+   ========================================================================== */
+.main-header {
     background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 1000;
-    padding: 15px 0;
+    padding: 15px 0 0 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    width: 100%;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    height: 90px;
 }
 
-.logo {
+.nav-esquerdo {
+    flex: 1;
+}
+
+.nav-esquerdo ul {
     display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    gap: 35px;
+}
+
+.header-direita-bloco {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 10px;
+    gap: 30px; 
 }
 
-.logo-icon {
-    font-size: 2rem;
-}
-
-.logo-texto h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: #8c7355;
-    letter-spacing: 1px;
-    line-height: 1.1;
-}
-
-.logo-texto p {
-    font-size: 0.65rem;
-    letter-spacing: 3px;
-    color: #777;
-    font-weight: 600;
-}
-
-nav ul {
+.nav-direito ul {
     display: flex;
     list-style: none;
-    gap: 25px;
+    gap: 35px;
 }
 
-nav ul li a {
+.nav-esquerdo ul li a, .nav-direito ul li a {
     text-decoration: none;
     color: #444;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #8c7355;
+.nav-esquerdo ul li a:hover, .nav-direito ul li a:hover {
+    color: #164a32;
+}
+
+.logo-central {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -30px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1010;
+    width: 280px;
+}
+
+.logo-background-wrapper {
+    background-color: #ffffff;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.03);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 110px;
+    padding-top: 10px;
+}
+
+.logo-img-centro {
+    display: block;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo-texto-centro {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    width: 100%;
+}
+
+.logo-texto-centro h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: #164a32;
+    letter-spacing: 1px;
+    font-weight: 700;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.logo-subtitulo {
+    display: none !important; 
+}
+
+.redes-topo {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
 .redes-topo a {
-    color: #777;
-    font-size: 1.1rem;
-    margin-left: 15px;
+    color: #164a32;
+    font-size: 1.2rem;
     transition: color 0.3s;
 }
 
 .redes-topo a:hover {
-    color: #8c7355;
+    color: #f2b73f;
 }
 
-/* BANNER PRINCIPAL (HERO) */
+.menu-toggle {
+    display: none;
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* ==========================================================================
+   4. HERO BANNER RESPONSIVO
+   ========================================================================== */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1600&auto=format&fit=crop&q=80') no-repeat center center/cover;
-    height: 65vh;
+    background: linear-gradient(rgba(14, 51, 34, 0.45), rgba(14, 51, 34, 0.35)), 
+                url('fachadaprincipal.jpeg') no-repeat;
+    background-size: cover;
+    background-position: center center; 
+    height: 72vh;
+    width: 100%;
+    max-width: 100vw; 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
     padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero-content h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin-bottom: 15px;
-    font-weight: 400;
+    font-weight: 600;
+    text-shadow: 2px 2px 14px rgba(0,0,0,0.8);
+    line-height: 1.2;
 }
 
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    font-weight: 300;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
 }
 
 .btn-principal {
     display: inline-block;
-    background-color: #8c7355;
-    color: #fff;
+    background-color: #f2b73f;
+    color: #0e3322;
     padding: 12px 35px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     border-radius: 4px;
     letter-spacing: 1px;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
 
 .btn-principal:hover {
-    background-color: #6e583f;
+    background-color: #164a32;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
-/* SOBRE */
+/* ==========================================================================
+   5. SEÇÃO SOBRE A POUSADA
+   ========================================================================== */
 .sobre-section {
     padding: 80px 0;
     text-align: center;
-    max-width: 800px;
+    max-width: 850px;
 }
 
 .sobre-section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
-    color: #8c7355;
+    color: #164a32;
     margin-bottom: 20px;
 }
 
 .sobre-section p {
     font-size: 1.1rem;
-    color: #666;
-    font-weight: 300;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.7;
 }
 
-/* GRIDS DOS QUARTOS */
+/* ==========================================================================
+   6. SEÇÃO DE ACOMODAÇÕES
+   ========================================================================== */
 .quartos-section {
-    background-color: #f5f2ee;
+    background-color: #edf2ef;
     padding: 80px 0;
 }
 
@@ -207,33 +303,39 @@ nav ul li a:hover {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     text-align: center;
-    color: #222;
+    color: #164a32;
 }
 
 .subtitulo-secao {
     text-align: center;
-    color: #777;
+    color: #555;
     margin-bottom: 50px;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
 }
 
 .quartos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
+    margin-bottom: 50px;
 }
 
 .quarto-card {
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .quarto-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(22, 74, 50, 0.15);
 }
 
 .quarto-card img {
@@ -249,25 +351,78 @@ nav ul li a:hover {
 .quarto-info h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: #222;
+    margin-bottom: 12px;
+    color: #164a32;
 }
 
 .quarto-info p {
     color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    height: 40px;
-}
-
-.quarto-info .preco {
-    display: block;
-    font-weight: 600;
-    color: #8c7355;
     font-size: 0.95rem;
+    line-height: 1.5;
 }
 
-/* ESPAÇO DO MOTOR DE RESERVAS */
+/* COMODIDADES */
+.comodidades-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    margin-top: 40px;
+}
+
+.comodidades-container h3 {
+    font-family: 'Playfair Display', serif;
+    color: #164a32;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #edf2ef;
+    padding-bottom: 10px;
+}
+
+.comodidades-lista {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.comodidades-lista li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fcfbfa;
+    padding: 15px 20px;
+    border-radius: 6px;
+    border-left: 4px solid #164a32;
+}
+
+.comodidades-lista li i {
+    font-size: 1.4rem;
+    color: #164a32;
+    width: 25px;
+    text-align: center;
+}
+
+.comodidades-lista li div {
+    display: flex;
+    flex-direction: column;
+}
+
+.comodidades-lista li strong {
+    font-size: 0.95rem;
+    color: #164a32;
+    line-height: 1.2;
+}
+
+.comodidades-lista li span {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 2px;
+}
+
+/* ==========================================================================
+   7. MOTOR DE RESERVAS
+   ========================================================================== */
 .reservas-section {
     padding: 80px 0;
     background-color: #fff;
@@ -275,7 +430,7 @@ nav ul li a:hover {
 
 .motor-placeholder {
     background-color: #fcfbfa;
-    border: 2px dashed #8c7355;
+    border: 2px dashed #164a32;
     padding: 40px 20px;
     border-radius: 8px;
     text-align: center;
@@ -287,37 +442,14 @@ nav ul li a:hover {
     gap: 15px;
 }
 
-.motor-placeholder p {
-    font-size: 1.2rem;
-    color: #444;
-}
-
-.motor-placeholder .small {
-    font-size: 0.9rem;
-    color: #888;
-}
-
-.btn-secundario {
-    background-color: transparent;
-    border: 1px solid #8c7355;
-    color: #8c7355;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 4px;
-    transition: all 0.3s;
-}
-
-.btn-secundario:hover {
-    background-color: #8c7355;
-    color: #fff;
-}
-
-/* RODAPÉ ROBUSTO */
+/* ==========================================================================
+   8. RODAPÉ
+   ========================================================================== */
 footer {
-    background-color: #1a1612;
-    color: #c4b9ae;
+    background-color: #1b2e24; 
+    color: #e2ebe6;
     padding-top: 60px;
+    width: 100%;
 }
 
 .footer-grid {
@@ -330,41 +462,38 @@ footer {
 .logo-footer {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 20px;
+}
+
+.logo-img-footer {
+    height: 65px;
+    width: 65px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .logo-texto-footer h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
-    color: #f2e6d8;
+    color: #fff;
     line-height: 1.1;
 }
 
-.logo-texto-footer p {
-    font-size: 0.65rem;
-    letter-spacing: 3px;
-    color: #8c7355;
-    font-weight: 600;
-}
-
 .footer-descricao {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #a6998c;
+    font-size: 0.95rem;
+    color: #bad1c4;
     margin-bottom: 25px;
 }
 
-/* Alinhamento perfeito e correção dos botões circulares */
 .redes-sociais-footer {
     display: flex;
     gap: 12px;
 }
 
 .redes-sociais-footer a {
-    color: #8c7355;
-    border: 1px solid #8c7355;
-    background-color: transparent;
+    color: #f2b73f;
+    border: 1px solid #f2b73f;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -377,18 +506,17 @@ footer {
 }
 
 .redes-sociais-footer a:hover {
-    background-color: #8c7355;
-    color: #1a1612;
+    background-color: #f2b73f;
+    color: #164a32;
     transform: translateY(-3px);
 }
 
 footer h4 {
     font-family: 'Playfair Display', serif;
-    color: #f2e6d8;
+    color: #fff;
     font-size: 1.2rem;
     margin-bottom: 25px;
-    font-weight: 600;
-    border-bottom: 1px solid #332a22;
+    border-bottom: 1px solid #235d42;
     padding-bottom: 10px;
 }
 
@@ -401,22 +529,14 @@ footer h4 {
 }
 
 .footer-links li a {
-    color: #a6998c;
+    color: #bad1c4;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s, padding-left 0.3s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.footer-links li a i {
-    font-size: 0.7rem;
-    color: #8c7355;
 }
 
 .footer-links li a:hover {
-    color: #f2e6d8;
+    color: #fff;
     padding-left: 5px;
 }
 
@@ -430,42 +550,219 @@ footer h4 {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    color: #a6998c;
+    color: #bad1c4;
 }
 
 .footer-contato-info li i {
-    color: #8c7355;
+    color: #f2b73f;
     font-size: 1.1rem;
     margin-top: 3px;
 }
 
-/* LINHA INFERIOR DE DIREITOS AUTORAIS */
 .footer-inferior {
-    background-color: #110e0c;
+    background-color: #0f1c15;
     padding: 25px 0;
-    border-top: 1px solid #26201a;
+    border-top: 1px solid #12402b;
     font-size: 0.85rem;
-    color: #73675c;
+    color: #8fa89b;
 }
 
 .footer-inferior-flex {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
+/* ==========================================================================
+   9. INTERFACES MOBILE (ATUALIZADA COM OTIMIZAÇÃO DE BOTÕES E CORTE DO MURO)
+   ========================================================================== */
+@media (max-width: 992px) {
+    
     .header-container {
+        display: flex;
+        flex-direction: row-reverse; 
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        width: 100%;
+        max-width: 100vw;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    /* 📊 BOTÃO HAMBÚRGUER REFORMULADO (Área de toque estendida e centralizada) */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #164a32;
+        color: #fff;
+        border: none;
+        width: 48px;  /* Tamanho ideal para o polegar humano */
+        height: 48px; /* Tamanho ideal para o polegar humano */
+        border-radius: 8px;
+        font-size: 1.4rem;
+        cursor: pointer;
+        z-index: 2000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        margin-right: 5px; /* Leve recuo da borda absoluta da tela */
+    }
+
+    .header-direita-bloco, .redes-topo {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block !important;
+    }
+
+    .nav-esquerdo {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        left: auto;
+        width: 280px;
+        height: 100vh;
+        background-color: #ffffff;
+        z-index: 1999;
+        padding: 90px 24px 30px 24px;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.2);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-esquerdo.active {
+        right: 0;
+        left: auto;
+    }
+
+    .nav-esquerdo ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 25px;
     }
+
+    .nav-esquerdo ul li a {
+        font-size: 1.1rem;
+        display: block;
+        padding: 5px 0;
+    }
+
+    .main-header {
+        padding: 10px 0;
+        height: 85px;
+    }
+
+    .logo-central {
+        position: relative;
+        left: auto;
+        transform: none;
+        top: 0;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        align-items: center;
+        margin-left: 5px;
+    }
+
+    .logo-background-wrapper {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .logo-img-centro {
+        width: 46px;
+        height: 46px;
+    }
+
+    .logo-texto-centro {
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        text-align: left;
+        width: auto;
+    }
+
+    .logo-texto-centro h1 {
+        font-size: 1.1rem;
+        white-space: nowrap;
+    }
+
+    /* 🚨 IMAGEM DE FUNDO REAJUSTADA (Esconde o muro cinza e foca nos chalés) */
+    .hero {
+        height: 58vh;
+        width: 100%;
+        max-width: 100vw;
+        background-position: 78% center !important; 
+        padding: 0 15px;
+        overflow: hidden;
+    }
+
     .hero-content h2 {
-        font-size: 1.9rem;
+        font-size: 1.6rem; 
+        word-wrap: break-word;
     }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    /* 📊 BOTÕES E CAMPOS DO MOTOR DE RESERVAS ATUALIZADOS */
+    .motor-placeholder, .reserva-container-box { 
+        width: 92% !important; /* Afasta o bloco branco das bordas do celular */
+        margin: 20px auto 0 auto;  /* Centraliza perfeitamente no viewport */
+        padding: 22px 18px;    /* Dá espaço interno elegante para os itens respirarem */
+        border-radius: 12px;   /* Cantos suaves de alto padrão */
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    /* Otimiza a altura e a fonte dos inputs para cliques perfeitos no celular */
+    .motor-placeholder input, 
+    .motor-placeholder select, 
+    .motor-placeholder button,
+    .reserva-container-box input,
+    .reserva-container-box select,
+    .reserva-container-box button {
+        height: 48px !important;    /* Altura perfeita para cliques com o dedão */
+        font-size: 1rem !important; /* Impede zoom automático indesejado no Safari/iOS */
+        border-radius: 6px !important;
+        margin-bottom: 12px;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 92%;
+    }
+    
+    .sobre-section {
+        padding: 50px 0;
+    }
+
+    .sobre-section h2, .titulo-secao {
+        font-size: 1.5rem;
+    }
+
+    .quartos-grid, .comodidades-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .comodidades-container {
+        padding: 20px;
+    }
+
+    .whatsapp-flutuante {
+        width: 52px;
+        height: 52px;
+        font-size: 26px;
+        bottom: 20px;
+        right: 20px;
     }
 }
