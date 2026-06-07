@@ -574,13 +574,13 @@ footer h4 {
 }
 
 /* ==========================================================================
-   9. INTERFACES MOBILE (ATUALIZADA COM OTIMIZAÇÃO DE BOTÕES E CORTE DO MURO)
+   9. INTERFACES MOBILE TOTALMENTE REVISADAS (CABEÇALHO, HAMBÚRGUER E MOTOR)
    ========================================================================== */
 @media (max-width: 992px) {
     
     .header-container {
         display: flex;
-        flex-direction: row-reverse; 
+        flex-direction: row; 
         justify-content: space-between;
         align-items: center;
         height: 70px;
@@ -590,7 +590,7 @@ footer h4 {
         box-sizing: border-box;
     }
 
-    /* 📊 BOTÃO HAMBÚRGUER REFORMULADO (Área de toque estendida e centralizada) */
+    /* 📊 BOTÃO HAMBÚRGUER REFORMULADO (Esquerda com área de toque excelente) */
     .menu-toggle {
         display: flex;
         align-items: center;
@@ -598,14 +598,13 @@ footer h4 {
         background: #164a32;
         color: #fff;
         border: none;
-        width: 48px;  /* Tamanho ideal para o polegar humano */
-        height: 48px; /* Tamanho ideal para o polegar humano */
+        width: 48px;  /* Tamanho ideal padrão Google para toque */
+        height: 48px; /* Tamanho ideal padrão Google para toque */
         border-radius: 8px;
         font-size: 1.4rem;
         cursor: pointer;
         z-index: 2000;
         box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-        margin-right: 5px; /* Leve recuo da borda absoluta da tela */
     }
 
     .header-direita-bloco, .redes-topo {
@@ -616,23 +615,24 @@ footer h4 {
         display: block !important;
     }
 
+    /* GAVETA LATERAL DO MENU MOBILE (Abre da Esquerda para a Direita) */
     .nav-esquerdo {
         position: fixed;
         top: 0;
-        right: -100%; 
-        left: auto;
+        left: -100%; 
+        right: auto;
         width: 280px;
         height: 100vh;
         background-color: #ffffff;
         z-index: 1999;
         padding: 90px 24px 30px 24px;
-        box-shadow: -5px 0 25px rgba(0,0,0,0.2);
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 5px 0 25px rgba(0,0,0,0.2);
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .nav-esquerdo.active {
-        right: 0;
-        left: auto;
+        left: 0;
+        right: auto;
     }
 
     .nav-esquerdo ul {
@@ -647,10 +647,11 @@ footer h4 {
     }
 
     .main-header {
-        padding: 10px 0;
-        height: 85px;
+        padding: 5px 0;
+        height: auto;
     }
 
+    /* LOGO MOBILE ALINHADA À DIREITA */
     .logo-central {
         position: relative;
         left: auto;
@@ -658,46 +659,55 @@ footer h4 {
         top: 0;
         width: auto;
         display: flex;
-        flex-direction: row;
-        gap: 12px;
+        flex-direction: row-reverse;
+        gap: 10px;
         align-items: center;
-        margin-left: 5px;
+        margin-right: 5px;
     }
 
     .logo-background-wrapper {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
         border-radius: 50%;
         padding: 0;
         box-shadow: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .logo-img-centro {
-        width: 46px;
-        height: 46px;
+        width: 42px;
+        height: 42px;
     }
 
     .logo-texto-centro {
         background: transparent;
         box-shadow: none;
         padding: 0;
-        text-align: left;
+        text-align: right;
         width: auto;
     }
 
     .logo-texto-centro h1 {
-        font-size: 1.1rem;
+        font-size: 1rem;
         white-space: nowrap;
     }
+    
+    .logo-subtitulo {
+        display: block !important;
+        font-size: 0.65rem;
+        color: #666;
+        letter-spacing: 0.5px;
+    }
 
-    /* 🚨 IMAGEM DE FUNDO REAJUSTADA (Esconde o muro cinza e foca nos chalés) */
+    /* AJUSTE DO HERO BANNER */
     .hero {
         height: 58vh;
         width: 100%;
         max-width: 100vw;
-        background-position: 78% center !important; 
+        background-position: center center; 
         padding: 0 15px;
-        overflow: hidden;
     }
 
     .hero-content h2 {
@@ -709,26 +719,21 @@ footer h4 {
         font-size: 0.95rem;
     }
 
-    /* 📊 BOTÕES E CAMPOS DO MOTOR DE RESERVAS ATUALIZADOS */
-    .motor-placeholder, .reserva-container-box { 
-        width: 92% !important; /* Afasta o bloco branco das bordas do celular */
-        margin: 20px auto 0 auto;  /* Centraliza perfeitamente no viewport */
-        padding: 22px 18px;    /* Dá espaço interno elegante para os itens respirarem */
-        border-radius: 12px;   /* Cantos suaves de alto padrão */
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    /* 📊 AJUSTE DO CONTAINER DO MOTOR DE RESERVAS (Evita colar nas bordas) */
+    .motor-placeholder { 
+        width: 92% !important; /* Desgruda totalmente da lateral do visor */
+        margin: 0 auto;        /* Centraliza perfeitamente */
+        padding: 30px 20px;    /* Espaço interno para respirar */
+        border-radius: 12px;   /* Cantos suavizados modernos */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
 
-    /* Otimiza a altura e a fonte dos inputs para cliques perfeitos no celular */
+    /* Altura adequada dos elementos internos para toque sem dar zoom indesejado */
+    .motor-placeholder button, 
     .motor-placeholder input, 
-    .motor-placeholder select, 
-    .motor-placeholder button,
-    .reserva-container-box input,
-    .reserva-container-box select,
-    .reserva-container-box button {
-        height: 48px !important;    /* Altura perfeita para cliques com o dedão */
-        font-size: 1rem !important; /* Impede zoom automático indesejado no Safari/iOS */
-        border-radius: 6px !important;
-        margin-bottom: 12px;
+    .motor-placeholder select {
+        height: 48px !important;
+        font-size: 1rem !important;
     }
 
     .footer-grid {

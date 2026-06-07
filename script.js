@@ -52,7 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const quartoId = card.getAttribute('data-quarto-id');
             const nomeQuarto = card.querySelector('h3').innerText;
             
-            document.getElementById('reservas').scrollIntoView({ behavior: 'smooth' });
+            const secaoReservas = document.getElementById('reservas');
+            if (secaoReservas) {
+                secaoReservas.scrollIntoView({ behavior: 'smooth' });
+            }
             console.log(`Foco no Quarto ID: ${quartoId} - ${nomeQuarto}`);
         });
     });
@@ -60,15 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // SIMULADOR DO MOTOR
     // ==========================================
-    if (botaoSimular) {
+    if (botaoSimular && containerMotor) {
         botaoSimular.addEventListener('click', () => {
             containerMotor.style.backgroundColor = '#f4fbf7';
-            containerMotor.style.borderColor = '#2ec4b6';
+            containerMotor.style.borderColor = '#164a32';
             containerMotor.innerHTML = `
                 <div style="text-align: center; padding: 20px;">
-                    <p style="color: #2ec4b6; font-weight: 600; margin-bottom: 10px;">✅ Motor de Reservas Acoplado!</p>
-                    <p style="font-size: 0.9rem; color: #555;">[O calendário inteligente do Supabase lerá as datas e listará os 6 quartos disponíveis]</p>
-                    <p style="font-size: 0.8rem; margin-top: 15px; color: #999;">Sistema desenvolvido por Marina.</p>
+                    <p style="color: #164a32; font-weight: 600; margin-bottom: 10px;">✅ Motor de Reservas Acoplado!</p>
+                    <p style="font-size: 0.9rem; color: #555; margin-bottom: 15px;">[O calendário inteligente do Supabase lerá as datas e listará os 6 quartos disponíveis]</p>
+                    <a href="https://motor-reservas-monjolo-lqqxuvhqq-marinalimamagnas-projects.vercel.app/" target="_blank" class="btn-principal" style="font-size: 0.85rem; padding: 8px 20px; text-decoration: none;">Acessar Sistema de Reservas</a>
                 </div>
             `;
         });
